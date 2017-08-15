@@ -1,0 +1,40 @@
+name: ml
+channels:
+  - anaconda
+  - developer
+  - conda-forge
+dependencies:
+  - nomkl
+  - python=3.5.2
+  - pandas=0.18.1
+  - xlrd=1.0.0
+  - mysql-connector-python=2.0.4
+  - matplotlib=2.0.2
+  - sqlalchemy=1.1.5
+  - psycopg2=2.6.2
+  - ipython=5.2.2
+  - openssl=1.0.2k
+  - jupyter=1.0.0
+  - ta-lib=0.4.9
+  - pymc3=3.1
+  - theano=0.9.0
+  - seaborn=0.8
+  - scikit-learn=0.18.2
+  - tensorflow=1.2.1
+
+  - pip:
+    - pandas_datareader==0.2.1
+    - pymysql==0.7.9
+    - bt==0.1.14
+    - ZODB==5.2.4
+    - RelStorage==2.0.0
+    - "RelStorage[mysql]"
+    - substanced
+    - pyramid_ipython==0.2
+    - python-magic==0.4.12
+    - mock
+    - baidu-aip
+    - pivottablejs
+    - sshtunnel
+    - zipline==1.1.1
+    - pyfolio==0.7.0
