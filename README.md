@@ -1,4 +1,4 @@
-#root dir
+# root dir
 
 - env ---> .env : define all the environment variables
 - db.py : define the database connection. 
