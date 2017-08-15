@@ -1,0 +1,66 @@
+[local]
+localhost
+
+[dev]
+10.8.9.51
+
+[prod]
+10.8.8.95
+10.8.8.97
+
+[docker]
+192.168.99.100
+
+[prod_vm]
+10.8.8.141
+10.8.8.142
+
+[dev_machines]
+10.8.8.142
+10.8.8.143
+10.8.8.144
+10.8.8.145
+10.8.8.146
+
+#Level	Numeric value
+#CRITICAL	50
+#ERROR	    40
+#WARNING	30
+#INFO	    20
+#DEBUG	    10
+#NOTSET	    0
+
+[prod_vm:vars]
+SQLALCHEMY_CONN=mysql+mysqldb://airflow:dCb1TARDdpo1Zv0hYKA4@10.8.8.95:3306/airflow?charset=utf8
+ROBO_WRITER=robo_writer:poxIEq8XhNN2Rqw_YbHz@10.8.8.95:3306
+ROBO_READER=robo_reader:jJkxOmCqF14aRSHyXpcw@10.8.8.95:3306
+ZODB=zodb:kH4I9K5pHKvQECrx_2Yl@10.8.8.95:3306
+MORNINGSTAR_DATABASE_URL=pymysql://robo_writer:poxIEq8XhNN2Rqw_YbHz@10.8.8.95:3306/mstar
+GIT_BRANCH=master
+ALERT_DL=robo-airflow-prod@yff.com
+
+[dev_machines:vars]
+SQLALCHEMY_CONN=mysql+mysqldb://airflow:airflow@{{ansible_default_ipv4.address}}:13306/airflow?charset=utf8
+ROBO_WRITER=root:fd5022ff06129d725de56fdea5c5f2ba@{{ansible_default_ipv4.address}}:13306
+ROBO_READER=root:fd5022ff06129d725de56fdea5c5f2ba@{{ansible_default_ipv4.address}}:13306
+ZODB=root:fd5022ff06129d725de56fdea5c5f2ba@{{ansible_default_ipv4.address}}:13306
+MORNINGSTAR_DATABASE_URL=pymysql://root:fd5022ff06129d725de56fdea5c5f2ba@{{ansible_default_ipv4.address}}:13306/mstar
+GIT_BRANCH=dev
+ALERT_DL=robo-airflow-dev@yff.com
+
+[dev:vars]
+SQLALCHEMY_CONN=mysql+mysqldb://root:fd5022ff06129d725de56fdea5c5f2ba@10.8.8.95:13306/airflow?charset=utf8
+ROBO_WRITER=root:fd5022ff06129d725de56fdea5c5f2ba@10.8.8.95:13306
+ROBO_READER=root:fd5022ff06129d725de56fdea5c5f2ba@10.8.8.95:13306
+ZODB=root:fd5022ff06129d725de56fdea5c5f2ba@10.8.8.95:13306
+MORNINGSTAR_DATABASE_URL=pymysql://root:fd5022ff06129d725de56fdea5c5f2ba@10.8.8.141:13306/mstar
+GIT_BRANCH=dev
+ALERT_DL=robo-airflow-dev@yff.com
+
+[prod:vars]
+SQLALCHEMY_CONN=mysql+mysqldb://airflow:dCb1TARDdpo1Zv0hYKA4@10.8.8.95:3306/airflow?charset=utf8
+ROBO_WRITER=robo_writer:poxIEq8XhNN2Rqw_YbHz@10.8.8.95:3306
+ROBO_READER=robo_reader:jJkxOmCqF14aRSHyXpcw@10.8.8.95:3306
+ZODB=zodb:kH4I9K5pHKvQECrx_2Yl@10.8.8.95:3306
+MORNINGSTAR_DATABASE_URL=pymysql://robo_writer:poxIEq8XhNN2Rqw_YbHz@10.8.8.141:3306/mstar
+GIT_BRANCH=master
